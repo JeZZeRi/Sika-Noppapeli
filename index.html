@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sika-Noppapeli</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <div class="container py-2">
+            <span class="navbar-brand">#412 JavaScript: Sikanoppapeli</span> 
+        </div>
+    </nav>
+</header>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Sika-Noppapeli</h1>
+        
+        <div id="settings" class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Asetukset</h5>
+                <form id="player-count-form">
+                    <div class="form-group">
+                        <label for="player-count">Pelaajien määrä:</label>
+                        <input type="number" id="player-count" class="form-control" min="2" max="10" value="2" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="target-score">Tavoitepisteet (min 100):</label>
+                        <input type="number" id="target-score" class="form-control" min="100" value="100" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Seuraava</button>
+                </form>
+                <form id="player-names-form" class="d-none">
+                    <div id="player-names"></div>
+                    <div class="form-group">
+                        <label for="dice-count">Noppien määrä:</label>
+                        <select id="dice-count" class="form-control">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Aloita peli</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="game-area" class="d-none">
+            <div class="row">
+                <div class="col-md-8">
+                    <div id="players" class="list-group mb-4"></div>
+                    <button id="roll-button" class="btn btn-success btn-block mb-2">Heitä Noppaa</button>
+                    <button id="hold-button" class="btn btn-warning btn-block mb-2">Pidä pisteet</button>
+                </div>
+                <div class="col-md-4">
+                    <div id="dice-area">
+                        <img src="img/d1.gif" name="mydice1" class="img-fluid">
+                        <img src="img/d1.gif" name="mydice2" class="img-fluid" style="display: none;">
+                    </div>
+                    <p id="turn-message"></p>
+                    <p id="current-round-score" class="font-weight-bold">Nykyiset pisteet: 0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
